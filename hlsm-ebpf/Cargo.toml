@@ -1,0 +1,17 @@
+[package]
+name = "hlsm-ebpf"
+version = "0.1.0"
+edition.workspace = true
+
+[dependencies]
+hlsm-common = { path = "../hlsm-common" }
+
+aya-ebpf = { workspace = true }
+aya-log-ebpf = { workspace = true }
+
+[build-dependencies]
+which = { workspace = true }
+
+[[bin]]
+name = "hlsm"
+path = "src/main.rs"
