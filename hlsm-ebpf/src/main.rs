@@ -1,7 +1,7 @@
 #![no_std]
 #![no_main]
 
-use aya_ebpf::{macros::{lsm, map}, maps::HashMap, programs::LsmContext};
+use aya_ebpf::{macros::{lsm, map}, maps::HashMap, programs::LsmContext, EbpfContext};
 use aya_log_ebpf::info;
 use hlsm_common::FileIdentity;
 
@@ -17,7 +17,8 @@ pub fn bprm_check_security(ctx: LsmContext) -> i32 {
 }
 
 fn try_bprm_check_security(ctx: LsmContext) -> Result<i32, i32> {
-    info!(&ctx, "lsm hook bprm_check_security called");
+    let pid = ctx.pid();
+    info!(&ctx, "PID tentando executar algo: {}", pid);
     Ok(0)
 }
 
