@@ -1,8 +1,12 @@
 #![no_std]
 #![no_main]
 
-use aya_ebpf::{macros::lsm, programs::LsmContext};
+use aya_ebpf::{macros::{lsm, map}, maps::HashMap, programs::LsmContext};
 use aya_log_ebpf::info;
+use hlsm_common::FileIdentity;
+
+#[map]
+static ALLOW_LIST: HashMap<FileIdentity, u8> = HashMap::with_max_entries(1024, 0);
 
 #[lsm(hook = "bprm_check_security")]
 pub fn bprm_check_security(ctx: LsmContext) -> i32 {
