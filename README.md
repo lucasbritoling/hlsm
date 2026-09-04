@@ -1,6 +1,6 @@
 ## Overview
 
-[Nome do Projeto] is a high-performance, kernel-anchored runtime security sandbox 
+High-performance, kernel-anchored runtime security sandbox 
 designed for Linux environments. It implements a zero-trust, deterministic 
 Static Application Whitelisting mechanism based on File Integrity Enforcement.
 
