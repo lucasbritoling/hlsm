@@ -1,6 +1,6 @@
 ## Overview
 
-Kernel-Anchored Application Whitelisting Enforcement (Kaawe) is a high-performance, kernel-anchored runtime security sandbox 
+**K**ernel-**A**nchored **A**pplication **W**hitelisting **E**nforcement (Kaawe) is a high-performance, kernel-anchored runtime security sandbox 
 designed for Linux environments. It implements a zero-trust, deterministic 
 Static Application Whitelisting mechanism based on File Integrity Enforcement.
 
