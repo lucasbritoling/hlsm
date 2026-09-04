@@ -18,8 +18,8 @@ pub fn bprm_check_security(ctx: LsmContext) -> i32 {
 
 fn try_bprm_check_security(ctx: LsmContext) -> Result<i32, i32> {
     let pid = ctx.pid();
-    info!(&ctx, "PID tentando executar algo: {}", pid);
-    Ok(0)
+    info!(&ctx, "PID tentando executar algo: {}. BLOQUEANDO", pid);
+    Ok(-13)
 }
 
 #[cfg(not(test))]
